@@ -51,7 +51,7 @@ const Form = () => {
   ];
 
   return (
-    <div className="w-full h-screen flex flex-col items-center my-6">
+    <div className="w-full min-h-screen flex flex-col items-center">
     <h1 className="text-3xl">Enter Personal Details</h1>
     <form>
 
