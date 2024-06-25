@@ -8,7 +8,7 @@ type InputProps = {
 
 const Input: React.FC<InputProps> = ({ placeholder, labelText, customStyles }) => {
   return (
-    <div className="flex flex-col w-[45%] mx-2">
+    <div className="flex flex-col w-[45%] mx-4">
       <label className="mb-2 text-t-light-gray text-xs">{labelText || ""}</label>
       <input
         placeholder={placeholder || ""}

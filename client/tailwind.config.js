@@ -6,7 +6,8 @@ export default {
       colors: {
         "light-gray": "#f0f2f9",
         "dark-gray": "#656e83",
-        "t-light-gray": "#828ba2"
+        "t-light-gray": "#828ba2",
+        "t-blue": "#1b91f0"
       }
     },
   },
