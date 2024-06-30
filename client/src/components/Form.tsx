@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { FormData } from "../types";
 import PersonalDetails from "./details/PersonalDetails";
+import ProfessionalSummary from "./details/ProfessionalSummary";
+import EmploymentHistory from "./details/EmploymentHistory";
 
-type FormTitle = "Personal Details" | "Education" | "Experience" | "Projects" | "Extras";
+type FormTitle =
+  | "Personal Details"
+  | "Education"
+  | "Experience"
+  | "Projects"
+  | "Extras";
 
 const Form = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -37,7 +44,7 @@ const Form = () => {
     edu2_year: "",
     edu2_qualification: "",
     edu2_desc: "",
-    
+
     extra_1: "",
     extra_2: "",
   });
@@ -48,12 +55,15 @@ const Form = () => {
     "Education",
     "Experience",
     "Projects",
-    "Extras"
+    "Extras",
   ];
 
   return (
-    <PersonalDetails />
-
+    <div>
+      <PersonalDetails />
+      <ProfessionalSummary />
+      <EmploymentHistory />
+    </div>
   );
 };
 

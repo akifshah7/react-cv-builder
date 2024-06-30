@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Input from "../../common/Input";
+import Input from "../../common/components/Input";
 
 const PersonalDetails: React.FC = () => {
   const [additionalDetails, setAdditionalDetails] = useState<boolean>(false);
 
   return (
-    <div className="p-4 w-full h-full flex flex-col gap-y-4">
+    <div className="p-4 flex flex-col gap-y-4">
       <h1 className="text-xl font-bold text-black mx-4">Personal Details</h1>
       <Input labelText="Wanted Job Title" />
       <div className="flex justify-between">
@@ -40,7 +40,9 @@ const PersonalDetails: React.FC = () => {
         onClick={() => setAdditionalDetails(!additionalDetails)}
         className="w-1/4 text-t-blue text-sm font-bold mx-2"
       >
-        {!additionalDetails ? "Edit Additional Details" : "Hide Additional Details"}
+        {!additionalDetails
+          ? "Edit Additional Details"
+          : "Hide Additional Details"}
       </button>
     </div>
   );
