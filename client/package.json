@@ -12,8 +12,10 @@
   "dependencies": {
     "@iconify-icon/react": "^2.1.0",
     "@iconify/json": "^2.2.223",
+    "konva": "^9.3.14",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-konva": "^18.2.10"
   },
   "devDependencies": {
     "@iconify/tailwind": "^1.1.1",
