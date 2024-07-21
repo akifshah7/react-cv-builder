@@ -38,7 +38,7 @@ const PersonalDetails: React.FC = () => {
       )}
       <button
         onClick={() => setAdditionalDetails(!additionalDetails)}
-        className="w-1/4 text-t-blue text-sm font-bold mx-2"
+        className="w-1/4 text-text-blue text-sm font-bold mx-2"
       >
         {!additionalDetails
           ? "Edit Additional Details"

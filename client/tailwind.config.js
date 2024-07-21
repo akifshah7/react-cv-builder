@@ -9,8 +9,8 @@ export default {
         "light-gray": "#f0f2f9",
         "dark-gray": "#656e83",
         "black": "#4a5162",
-        "t-light-gray": "#828ba2",
-        "t-blue": "#1b91f0",
+        "text-light-gray": "#828ba2",
+        "text-blue": "#1b91f0",
       }
     },
   },
