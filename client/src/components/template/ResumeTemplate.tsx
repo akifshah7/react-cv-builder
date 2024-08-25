@@ -6,6 +6,12 @@ const ResumeTemplate: React.FC = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas?.getContext("2d");
+
+    // header
+    if(context) {
+      context.font = "30px Arial";
+
+    }
   }, []);
 
   return (
