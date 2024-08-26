@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+import { useRecoilState } from "recoil";
+import { textAreaState } from "../../state/prof-summary.atom";
+import { TextAreaState } from "../../../types";
 
 type TextAreaProps = {
   label: string;
@@ -11,20 +14,14 @@ const TextArea: React.FC<TextAreaProps> = ({
   label,
   bottomLabel,
 }) => {
-  const [bold, setBold] = useState<boolean>(false);
-  const [italic, setItalic] = useState<boolean>(false);
-  const [underline, setUnderline] = useState<boolean>(false);
-  const [strikethrough, setStrikethrough] = useState<boolean>(false);
-  const [numberedList, setNumberedList] = useState<boolean>(false);
-  const [bulletList, setBulletList] = useState<boolean>(false);
+  const [textArea, setTextArea] = useRecoilState(textAreaState);
 
-  // State variable to track the value of the textarea
-  const [textValue, setTextValue] = useState<string>("");
-
-  // Handler to update the state when the user types
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    event.preventDefault();
-    setTextValue(event.target.value);
+    setTextArea({ ...textArea, textValue: event.target.value });
+  };
+
+  const toggleFormat = (format: keyof TextAreaState) => {
+    setTextArea({ ...textArea, [format]: !textArea[format] });
   };
 
   return (
@@ -33,49 +30,49 @@ const TextArea: React.FC<TextAreaProps> = ({
       <div className="relative mt-2">
         <div className="bg-light-gray h-0 w-full flex absolute p-3 gap-x-3 rounded-sm">
           <button
-            onClick={() => setBold(!bold)}
+            onClick={() => toggleFormat("bold")}
             className={`icon-[octicon--bold-24] h-5 w-5 ${
-              bold ? "text-text-blue" : "text-black"
+              textArea.bold ? "text-text-blue" : "text-black"
             }`}
           ></button>
           <button
-            onClick={() => setItalic(!italic)}
+            onClick={() => toggleFormat("italic")}
             className={`icon-[octicon--italic-16] h-5 w-5 ${
-              italic ? "text-text-blue" : "text-black"
+              textArea.italic ? "text-text-blue" : "text-black"
             }`}
           ></button>
           <button
-            onClick={() => setUnderline(!underline)}
+            onClick={() => toggleFormat("underline")}
             className={`icon-[mingcute--underline-fill] h-5 w-5 ${
-              underline ? "text-text-blue" : "text-black"
+              textArea.underline ? "text-text-blue" : "text-black"
             }`}
           ></button>
           <button
-            onClick={() => setStrikethrough(!strikethrough)}
+            onClick={() => toggleFormat("strikethrough")}
             className={`icon-[mingcute--strikethrough-fill] h-5 w-5 ${
-              strikethrough ? "text-text-blue" : "text-black"
+              textArea.strikethrough ? "text-text-blue" : "text-black"
             }`}
           ></button>
 
           <div className="border-1 border-black border-r h-5"></div>
 
           <button
-            onClick={() => setNumberedList(!numberedList)}
+            onClick={() => toggleFormat("numberedList")}
             className={`icon-[pajamas--list-numbered] h-5 w-5 ${
-              numberedList ? "text-text-blue" : "text-black"
+              textArea.numberedList ? "text-text-blue" : "text-black"
             }`}
           ></button>
           <button
-            onClick={() => setBulletList(!bulletList)}
+            onClick={() => toggleFormat("bulletList")}
             className={`icon-[ooui--list-bullet-ltr] h-5 w-5 ${
-              bulletList ? "text-text-blue" : "text-black"
+              textArea.bulletList ? "text-text-blue" : "text-black"
             }`}
           ></button>
 
           <div className="border-1 border-black border-r h-5"></div>
         </div>
         <textarea
-          value={textValue}
+          value={textArea.textValue}
           onChange={handleChange}
           placeholder={placeholder}
           className="bg-light-gray w-full h-56 mt-6 rounded-sm focus:outline-none focus:border-b-2 focus:border-blue-400 px-4 py-6 text-black"

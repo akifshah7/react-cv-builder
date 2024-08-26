@@ -18,7 +18,7 @@ const Input: React.FC<InputProps> = ({ placeholder, labelText, customStyles, nam
         value={value}
         onChange={onChange}
         placeholder={placeholder || ""}
-        className={`bg-light-gray rounded-sm p-4 w-full focus:outline-none border-b-0 focus:border-b-2 focus:border-blue-400 ${customStyles}`}
+        className={`bg-light-gray text-black rounded-sm p-4 w-full focus:outline-none border-b-0 focus:border-b-2 focus:border-blue-400 ${customStyles}`}
       />
     </div>
   );

@@ -13,3 +13,13 @@ export type PersonalDetails = {
   placeOfBirth: string;
   dateOfBirth: string;
 };
+
+export type TextAreaState = {
+  textValue: string;
+  bold: boolean;
+  italic: boolean;
+  underline: boolean;
+  strikethrough: boolean;
+  numberedList: boolean;
+  bulletList: boolean;
+};
