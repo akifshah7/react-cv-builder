@@ -1,22 +1,30 @@
-# React CV Builder
+# React + TypeScript + Vite
 
-Welcome to the React CV Builder! This web application allows users to easily create their professional resumes by filling out a form with their personal details, education, experience, projects, and additional information. The user-friendly interface and customizable features make it simple for users to generate a polished CV tailored to their needs.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- **User-friendly Interface**: Intuitive design and smooth navigation for a seamless user experience.
-- **Form-based Input**: Easily fill out a form with personal details, education, experience, projects, and additional information.
-- **Real-time Preview**: Instantly preview the CV as the user fills out the form, ensuring everything looks as expected.
-- **Customizable Templates**: Choose from a variety of pre-designed templates to style the CV according to personal preferences.
-- **Downloadable CV**: Download the completed CV in PDF format for offline use or sharing with potential employers.
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices, ensuring accessibility across various platforms.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Getting Started
+## Expanding the ESLint configuration
 
-To run the React CV Builder locally, follow these steps:
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-```bash
-git clone https://github.com/your-username/react-cv-builder.git
-cd react-cv-builder
-npm install
-npm start
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
+
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
