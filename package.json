@@ -12,6 +12,7 @@
   "dependencies": {
     "@iconify-icon/react": "^2.1.0",
     "@iconify/json": "^2.2.223",
+    "@react-pdf/renderer": "^4.1.4",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
     "react": "^18.2.0",
