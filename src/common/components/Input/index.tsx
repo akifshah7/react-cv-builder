@@ -4,14 +4,14 @@ type InputProps = {
   labelText?: string;  
   placeholder?: string;
   customStyles?: string;
-  name: string;
-  value: string;
+  name?: string;
+  value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Input: React.FC<InputProps> = ({ placeholder, labelText, customStyles, name, value, onChange }) => {
   return (
-    <div className="w-[45%] mx-4">
+    <div className="w-full">
       <label className="mb-2 text-text-light-gray text-xs">{labelText || ""}</label>
       <input
         name={name}

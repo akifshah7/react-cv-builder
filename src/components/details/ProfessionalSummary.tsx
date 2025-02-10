@@ -3,8 +3,8 @@ import TextArea from "../../common/components/TextArea";
 
 const ProfessionalSummary: React.FC = () => {
   return (
-    <div className="p-4 flex flex-col gap-y-2">
-      <h1 className="text-xl font-bold text-black mx-4">
+    <div className="p-4 mx-4 flex flex-col gap-y-2">
+      <h1 className="text-xl font-bold text-black">
         Professional Summary
       </h1>
       <TextArea

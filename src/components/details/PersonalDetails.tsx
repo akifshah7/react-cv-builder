@@ -16,15 +16,17 @@ const PersonalDetails: React.FC = () => {
   };
 
   return (
-    <div className="p-4 flex flex-col gap-y-4">
-      <h1 className="text-xl font-bold text-black mx-4">Personal Details</h1>
+    <div className="flex flex-col gap-y-4 p-4 mx-4">
+      <h1 className="text-xl font-bold text-black">Personal Details</h1>
+      <div className="w-[45%]">
       <Input
         labelText="Wanted Job Title"
         name="jobTitle"
         value={personalDetails.jobTitle}
         onChange={handleInputChange}
       />
-      <div className="flex justify-between">
+      </div>
+      <div className="flex justify-between gap-x-4">
         <Input
           labelText="First Name"
           name="firstName"
@@ -38,7 +40,7 @@ const PersonalDetails: React.FC = () => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between gap-x-4">
         <Input
           labelText="Email"
           name="email"
@@ -52,7 +54,7 @@ const PersonalDetails: React.FC = () => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between gap-x-4">
         <Input
           labelText="Country"
           name="country"
@@ -114,7 +116,7 @@ const PersonalDetails: React.FC = () => {
       )}
       <button
         onClick={() => setAdditionalDetails(!additionalDetails)}
-        className="w-1/4 text-text-blue text-sm font-bold mx-2"
+        className="w-full text-start p-1 text-text-blue text-sm font-bold"
       >
         {!additionalDetails
           ? "Edit Additional Details"
