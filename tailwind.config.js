@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 const { addDynamicIconSelectors } = require('@iconify/tailwind');
 
 /** @type {import('tailwindcss').Config} */
@@ -11,8 +12,13 @@ export default {
         "black": "#4a5162",
         "text-light-gray": "#828ba2",
         "text-blue": "#1b91f0",
+        "dark-blue": "#1677c2"
       }
     },
   },
+  daisyui: {
+    themes: ["light"]
+  },
+  // eslint-disable-next-line no-undef
   plugins: [require("daisyui"), addDynamicIconSelectors()],
 };
