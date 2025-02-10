@@ -7,6 +7,7 @@ type TextAreaProps = {
   label: string;
   placeholder: string;
   bottomLabel: string;
+  height?: string;
 };
 
 const TextArea: React.FC<TextAreaProps> = ({
@@ -25,7 +26,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   };
 
   return (
-    <div className="mx-4 mb-2">
+    <div className="mb-2">
       <label className="text-text-light-gray text-sm">{label}</label>
       <div className="relative mt-2">
         <div className="bg-light-gray h-0 w-full flex absolute p-3 gap-x-3 rounded-sm">
@@ -75,7 +76,7 @@ const TextArea: React.FC<TextAreaProps> = ({
           value={textArea.textValue}
           onChange={handleChange}
           placeholder={placeholder}
-          className="bg-light-gray w-full h-56 mt-6 rounded-sm focus:outline-none focus:border-b-2 focus:border-blue-400 px-4 py-6 text-black"
+          className="bg-light-gray w-full mt-6 h-56 rounded-sm focus:outline-none focus:border-b-2 focus:border-blue-400 px-4 py-6 text-black"
         />
         <label className="text-text-light-gray text-sm">{bottomLabel}</label>
       </div>

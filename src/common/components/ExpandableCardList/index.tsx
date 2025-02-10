@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import AccordionForm from "../AccordionForm";
 
 type ExpandableCard = {
-    id: number;
-}
+  id: number;
+};
 
-const ExpandableCardForm: React.FC = () => {
+const ExpandableCardList: React.FC = () => {
   const [listOfCards, setListOfCards] = useState<ExpandableCard[]>([]);
 
   const handleAddCard = () => {
@@ -17,18 +18,19 @@ const ExpandableCardForm: React.FC = () => {
   return (
     <>
       {listOfCards.map((card: ExpandableCard) => (
-        <div className="mx-4 h-16 card rounded-md border-[1px] border-gray-300" key={card.id}>
-        </div>
+        <AccordionForm key={card.id} />
       ))}
-      <div className="border-black border-1 p-2 mx-4">
-        <button onClick={handleAddCard} className="w-full font-semibold text-sm flex text-text-blue gap-x-2">
+      <div className="border-black border-1 p-1 mx-4 hover:bg-blue-50">
+        <button
+          onClick={handleAddCard}
+          className="w-full font-semibold text-sm flex text-text-blue gap-x-2"
+        >
           <span>+</span>
-          <p>Add Employment</p>
+          <p>Add one more employment</p>
         </button>
       </div>
-
     </>
   );
 };
 
-export default ExpandableCardForm;
+export default ExpandableCardList;

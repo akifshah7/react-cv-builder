@@ -1,5 +1,5 @@
 import React from "react";
-import ExpandableCardForm from "../../common/components/ExpandableCardForm";
+import ExpandableCardList from "../../common/components/ExpandableCardList";
 
 const EmploymentHistory: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const EmploymentHistory: React.FC = () => {
         your achievements, if possible - use numbers/facts (Achieved X, measured
         by Y, by doing Z).
       </p>
-      <ExpandableCardForm />
+      <ExpandableCardList />
     </div>
   );
 };
